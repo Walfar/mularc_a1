@@ -47,9 +47,9 @@ double calculate_pi (int num_threads, int samples) {
         double x = next_rand(seed);
         double y = next_rand(seed);
 
-        if (x*x + y*y <= 1.0) nber_points++;        
+        if (x*x + y*y < 1.0) nber_points++;        
     }
 
-    pi = ((double)nber_points/(double)samples) * 4.0;
+    pi = ((double)nber_points/(double)samples);
     return pi;
 }

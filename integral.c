@@ -49,7 +49,7 @@ double integrate (int num_threads, int samples, int a, int b, double (*f)(double
 
     #pragma omp parallel 
     for (size_t i = 0; i < samples; i++) {
-        sum += f((a - b)*next_rand(seed) + b)*(b - a);   
+        sum += f((b - a)*next_rand(seed) + a);   
     }
 
     integral = sum/(double)samples;
